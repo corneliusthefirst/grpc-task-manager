@@ -16,7 +16,7 @@ const credentials = env.secure === 'true'
 			fs.readFileSync(env.FRONT_KEY as string),
 			fs.readFileSync(env.FRONT_CERT as string)
 	  )
-	: ChannelCredentials.createInsecure();
+	:*/ ChannelCredentials.createInsecure();
 
 const taskTransport = new GrpcTransport({
 	host: env.TASK_API_URL as string,

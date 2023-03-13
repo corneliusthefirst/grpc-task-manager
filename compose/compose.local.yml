@@ -11,7 +11,7 @@ services:
       - /app/.pnpm-store
     environment:
       - MYSQL_URL=mysql://root:passwd@mariadb:3306/auth
-      - insecure=false
+      - insecure=true
       - AUTH_CERT=/certs/auth.pem
       - AUTH_KEY=/certs/auth-key.pem
       - PORT=4000
@@ -41,7 +41,7 @@ services:
       - /app/.pnpm-store
     environment:
       - MYSQL_URL=mysql://root:passwd@mariadb:3306/user
-      - insecure=false
+      - insecure=true
       - PORT=4000
       - AUTH_API_URL=auth-api:4000
       - USER_CERT=/certs/user.pem
@@ -68,7 +68,7 @@ services:
       - /app/.pnpm-store
     environment:
       - MONGO_URL=mongodb://root:task@mongo
-      - insecure=false
+      - insecure=true
       - PORT=4000
       - TASK_CERT=/certs/task.pem
       - TASK_KEY=/certs/task-key.pem
