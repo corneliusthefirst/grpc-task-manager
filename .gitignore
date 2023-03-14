@@ -150,4 +150,8 @@ dist
 package
 
 # Removing certificates
+<<<<<<< HEAD
 # **.pem
+=======
+**.pem
+>>>>>>> 5daa3a4 (my local changes to grpc-task-manager)

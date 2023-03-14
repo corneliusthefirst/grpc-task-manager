@@ -10,13 +10,13 @@ import { UserServiceClient } from '$src/lib/stubs/user/v1alpha/service.client';
 import { AuthServiceClient } from '$src/lib/stubs/auth/v1alpha/service.client';
 import { env } from '$env/dynamic/private';
 
-const credentials = env.secure === 'true'
+const credentials = env.secure
 	? ChannelCredentials.createSsl(
 			fs.readFileSync(env.ROOT_CA as string),
 			fs.readFileSync(env.FRONT_KEY as string),
 			fs.readFileSync(env.FRONT_CERT as string)
 	  )
-	:*/ ChannelCredentials.createInsecure();
+	: ChannelCredentials.createInsecure();
 
 const taskTransport = new GrpcTransport({
 	host: env.TASK_API_URL as string,
