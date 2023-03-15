@@ -1,8 +1,11 @@
-import { IsAlpha } from 'class-validator';
+import { IsEmail, Length } from "class-validator";
+
 
 export class UpdateUserDto {
-  @IsAlpha()
-  firstName?: string;
-  @IsAlpha()
-  lastName?: string;
+    @IsEmail()
+    email: string;
+    @Length(2, 64)
+    firstName: string;
+    @Length(2, 64)
+    lastName: string;
 }

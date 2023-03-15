@@ -79,6 +79,9 @@ export class UserController {
         },
       );
 
+      // validate the request
+      await this.validateDto(req, UpdateUserDto);
+
       const user = await this.userService.updateUser({
         where: {
           id: +req.user.id,
